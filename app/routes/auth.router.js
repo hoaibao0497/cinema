@@ -13,5 +13,6 @@ authRouter.post(
   AuthController.register
 );
 authRouter.post("/login", AuthController.login);
+authRouter.post("/refresh-token", AuthController.refreshToken);
 
 export default authRouter;

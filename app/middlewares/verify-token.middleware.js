@@ -17,4 +17,10 @@ const verifyToken = (req, res, next) => {
   return next();
 };
 
-export { verifyToken };
+const authorize = (req, res, next) => {
+  const role = ["admin", "supper-admin", "manager"];
+  const user = req;
+  console.log(user);
+};
+
+export { verifyToken, authorize };
