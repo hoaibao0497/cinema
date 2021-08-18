@@ -22,4 +22,16 @@ const isAuth = async (req, res, next) => {
   }
 };
 
-export default isAuth;
+const isAuthorize = (arrRole) => (req, res, next) => {
+  const { jwtDecoded } = req;
+  const compareRole = arrRole.findIndex(
+    (role) => jwtDecoded.data.role === role
+  );
+  if (compareRole > -1) {
+    next();
+  } else {
+    return res.json({ message: "You dont have permission to access" });
+  }
+};
+
+export { isAuth, isAuthorize };
