@@ -14,6 +14,13 @@ const user = {
     type: DataTypes.STRING,
     allowNull: false,
   },
+  phone: {
+    type: DataTypes.STRING,
+  },
+  role: {
+    type: DataTypes.STRING,
+    defaultValue: "client",
+  },
   createdAt: {
     type: DataTypes.DATE,
     allowNull: false,

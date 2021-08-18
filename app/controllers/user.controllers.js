@@ -31,8 +31,8 @@ const userDetail = (req, res) => {
 const createUser = async (req, res) => {
   try {
     new Promise(async (resolve, reject) => {
-      const { name, email, password } = req.body;
-      const user = await User.create({ name, email, password });
+      const { name, email, password, phone, role } = req.body;
+      const user = await User.create({ name, email, password, phone, role });
       if (user) {
         resolve(res.json(user));
       } else {
@@ -47,10 +47,10 @@ const updateUser = async (req, res) => {
   try {
     new Promise(async (resolve, reject) => {
       const { id } = req.params;
-      const { name, email, password } = req.body;
+      const { name, email, phone, role } = req.body;
       const user = await User.findOne({ where: { id } });
       if (user) {
-        await User.update({ name, email, password }, { where: { id } });
+        await User.update({ name, email, phone, role }, { where: { id } });
         const newUser = await User.findOne({ where: { id } });
         resolve(res.json(newUser));
       } else {
