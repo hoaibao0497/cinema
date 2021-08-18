@@ -1,4 +1,4 @@
-import User from "../models";
+import { User } from "../models";
 const userList = (req, res) => {
   try {
     new Promise(async (resolve, reject) => {

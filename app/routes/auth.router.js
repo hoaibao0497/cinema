@@ -1,6 +1,6 @@
 import { Router } from "express";
 import checkEmail from "../middlewares/check_exist.middlerware";
-import User from "../models";
+import { User } from "../models";
 import AuthController from "../controllers/auth.controllers";
 import { validation } from "../middlewares/validation";
 
