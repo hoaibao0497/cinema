@@ -2,7 +2,7 @@ import { Sequelize, DataTypes } from "sequelize";
 
 const showtime = {
   startTime: {
-    type: DataTypes.DATE,
+    type: DataTypes.STRING,
   },
   cinemaId: {
     type: DataTypes.INTEGER,

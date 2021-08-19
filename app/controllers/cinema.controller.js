@@ -51,4 +51,34 @@ const getListCinemaWithAddress = async (req, res) => {
   }
 };
 
-export default { getListCinema, createCinema, getListCinemaWithAddress };
+const getCinemaWithMovie = async (req, res) => {
+  try {
+    const { movieName } = req.query;
+    const [result] = await db.query(`
+    select movies.name as Movies , 
+    movies.startDate, movies.time , 
+    cinemas.name as Cinemas , cinemas.address 
+    from cinemas inner join movies 
+    inner join cinema_movies
+    on cinema_movies.movieId = movies.id 
+    on cinema_movies.cinemaId = cinemas.id 
+    where movies.name like "%${movieName}%"
+    `);
+    if (![result] || result.toString() == "") {
+      return res
+        .status(404)
+        .json({ message: "Không tìm thấy rạp chiếu nào theo phim đã tìm!" });
+    } else {
+      res.json(result);
+    }
+  } catch (error) {
+    res.json(error);
+  }
+};
+
+export default {
+  getListCinema,
+  createCinema,
+  getListCinemaWithAddress,
+  getCinemaWithMovie,
+};

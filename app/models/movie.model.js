@@ -6,11 +6,11 @@ const movie = {
     allowNull: false,
   },
   startDate: {
-    type: DataTypes.DATE,
+    type: DataTypes.STRING,
     allowNull: false,
   },
   time: {
-    type: DataTypes.INTEGER,
+    type: DataTypes.STRING,
     allowNull: false,
   },
   evaluate: {

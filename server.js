@@ -8,6 +8,7 @@ import { db as DATABASE } from "./app/config/db.config";
 import { createCinema } from "./app/seeders/seedCinema";
 import { createCineplex } from "./app/seeders/cineplex.seeder";
 import { createUser } from "./app/seeders/user.seeder";
+import { createMovie } from "./app/seeders/movie.seeder";
 
 const app = express();
 
@@ -26,6 +27,7 @@ DATABASE.sync({ force: false }).then(() => {
   // createCineplex();
   // createCinema();
   // createUser();
+  // createMovie();
   // Port
   const port = process.env.PORT || 8100;
   app.listen(port, () => {
