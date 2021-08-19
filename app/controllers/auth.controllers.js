@@ -5,8 +5,6 @@ import JWTToken from "../services/JWT.token";
 
 let tokenList = {};
 
-console.log(tokenList);
-
 const accessTokenLife = process.env.EXPIRATION || "10m";
 
 const accessTokenSecret = process.env.SECRETKEY || "bao";

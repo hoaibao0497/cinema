@@ -10,19 +10,14 @@ const cinema = {
     allowNull: false,
   },
   image: {
-    type: DataTypes.INTEGER,
-    allowNull: false,
+    type: DataTypes.STRING,
   },
   cineplexId: {
     type: DataTypes.INTEGER,
-  },
-  createdAt: {
-    type: DataTypes.DATE,
-    allowNull: false,
-  },
-  updatedAt: {
-    type: DataTypes.DATE,
-    allowNull: false,
+    references: {
+      model: "cineplexes",
+      key: "id",
+    },
   },
 };
 export default cinema;

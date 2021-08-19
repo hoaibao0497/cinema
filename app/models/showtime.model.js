@@ -6,14 +6,11 @@ const showtime = {
   },
   cinemaId: {
     type: DataTypes.INTEGER,
-  },
-  createdAt: {
-    type: DataTypes.DATE,
     allowNull: false,
-  },
-  updatedAt: {
-    type: DataTypes.DATE,
-    allowNull: false,
+    references: {
+      model: "cinemas",
+      key: "id",
+    },
   },
 };
 export default showtime;

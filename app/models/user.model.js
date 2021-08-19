@@ -21,13 +21,5 @@ const user = {
     type: DataTypes.STRING,
     defaultValue: "client",
   },
-  createdAt: {
-    type: DataTypes.DATE,
-    allowNull: false,
-  },
-  updatedAt: {
-    type: DataTypes.DATE,
-    allowNull: false,
-  },
 };
 export default user;

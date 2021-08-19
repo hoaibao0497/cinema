@@ -4,18 +4,18 @@ const cinema_movie = {
   cinemaId: {
     type: DataTypes.INTEGER,
     allowNull: false,
+    references: {
+      model: "cinemas",
+      key: "id",
+    },
   },
   movieId: {
     type: DataTypes.INTEGER,
     allowNull: false,
-  },
-  createdAt: {
-    type: DataTypes.DATE,
-    allowNull: false,
-  },
-  updatedAt: {
-    type: DataTypes.DATE,
-    allowNull: false,
+    references: {
+      model: "movies",
+      key: "id",
+    },
   },
 };
 export default cinema_movie;

@@ -16,4 +16,8 @@ const Cineplex = db.define("cineplex", cineplex);
 const Showtime = db.define("showtime", showtime);
 const Seat = db.define("seat", seat);
 const Ticket = db.define("ticket", ticket);
+
+Cineplex.hasMany(Cinema, cinema.cineplexId);
+Cinema.belongsTo(Cineplex);
+
 export { User, Movie, CinemaMovie, Cinema, Cineplex, Showtime, Seat, Ticket };

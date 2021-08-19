@@ -18,14 +18,11 @@ const seat = {
   },
   showtimeId: {
     type: DataTypes.INTEGER,
-  },
-  createdAt: {
-    type: DataTypes.DATE,
     allowNull: false,
-  },
-  updatedAt: {
-    type: DataTypes.DATE,
-    allowNull: false,
+    references: {
+      model: "showtimes",
+      key: "id",
+    },
   },
 };
 export default seat;

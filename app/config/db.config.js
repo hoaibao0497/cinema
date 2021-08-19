@@ -7,7 +7,7 @@ const db = new Sequelize(DB_NAME, DB_USER, DB_PASSWORD, {
   host: HOST,
   dialect: DIALECT,
   timezone: "+07:00",
-  //   logging: false,
+  logging: false,
 });
 // Test kết nối với database
 const connect = async () => {
