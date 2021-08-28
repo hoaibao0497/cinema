@@ -135,3 +135,14 @@ const listId = [
     movieId: 4,
   },
 ];
+import { CinemaMovie } from "../models";
+const createCinemaMovie = () => {
+  listId.forEach(async (seed) => {
+    await CinemaMovie.create({
+      cinemaId: seed.cinemaId,
+      movieId: seed.movieId,
+    });
+  });
+};
+
+export { createCinemaMovie };

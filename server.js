@@ -9,6 +9,9 @@ import { createCinema } from "./app/seeders/seedCinema";
 import { createCineplex } from "./app/seeders/cineplex.seeder";
 import { createUser } from "./app/seeders/user.seeder";
 import { createMovie } from "./app/seeders/movie.seeder";
+import { createShowTime } from "./app/seeders/showtime.seeder";
+import { createSeat } from "./app/seeders/seat.seeder";
+import { createCinemaMovie } from "./app/seeders/cinema_movie.seeder";
 
 const app = express();
 
@@ -28,6 +31,9 @@ DATABASE.sync({ force: false }).then(() => {
   // createCinema();
   // createUser();
   // createMovie();
+  // createShowTime();
+  // createCinemaMovie();
+  // createSeat();
   // Port
   const port = process.env.PORT || 8100;
   app.listen(port, () => {

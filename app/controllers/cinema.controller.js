@@ -41,7 +41,7 @@ const getListCinemaWithAddress = async (req, res) => {
       on cinemas.cineplexId = cineplexes.id 
       where cinemas.address like "%${address}%"`
     );
-    if (![result] || result === "object") {
+    if (![result] || result.toString() == "") {
       res.status(404).json("Không tìm thấy rạp chiếu nào ở khu vực này!");
     } else {
       res.json(result);
@@ -64,6 +64,7 @@ const getCinemaWithMovie = async (req, res) => {
     on cinema_movies.cinemaId = cinemas.id 
     where movies.name like "%${movieName}%"
     `);
+    console.log(result);
     if (![result] || result.toString() == "") {
       return res
         .status(404)

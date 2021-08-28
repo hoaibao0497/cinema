@@ -26,4 +26,10 @@ CinemaMovie.belongsTo(Cinema);
 Movie.hasMany(CinemaMovie, cinema_movie.movieId);
 CinemaMovie.belongsTo(Movie);
 
+Cinema.hasMany(Showtime, showtime.cinemaId);
+Showtime.belongsTo(Cinema);
+
+Showtime.hasMany(Seat, seat.showtimeId);
+Seat.belongsTo(Showtime);
+
 export { User, Movie, CinemaMovie, Cinema, Cineplex, Showtime, Seat, Ticket };

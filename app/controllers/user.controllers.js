@@ -2,6 +2,7 @@ import { User } from "../models";
 const userList = (req, res) => {
   try {
     new Promise(async (resolve, reject) => {
+      console.log(await User);
       const user = await User.findAll({ raw: true });
       if (user) {
         resolve(res.json(user));

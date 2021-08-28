@@ -8,27 +8,27 @@ const movieRouter = Router();
 movieRouter.get(
   "/",
   isAuth,
-  isAuthorize(["Admin", "Super-admin"]),
+  isAuthorize(["admin", "Super-admin"]),
   MovieController.movieList
 );
 movieRouter.get(
   "/:id",
   isAuth,
-  isAuthorize(["Admin", "super-admin"]),
+  isAuthorize(["admin", "super-admin"]),
   MovieController.movieDetail
 );
 movieRouter.post("/", validation, MovieController.createMovie);
 movieRouter.put(
   "/:id",
   isAuth,
-  isAuthorize(["Admin", "super-admin", "manager"]),
+  isAuthorize(["admin", "super-admin", "manager"]),
   validation,
   MovieController.updateMovie
 );
 movieRouter.delete(
   "/:id",
   isAuth,
-  isAuthorize(["Admin", "super-admin"]),
+  isAuthorize(["admin", "super-admin"]),
   MovieController.deleteMovie
 );
 
